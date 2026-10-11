@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "TRCS evaluation suite and results: speech-model hallucination and codec-grid error rates on synthetic radio audio"
+type: software
+authors:
+  - family-names: Caceres
+    given-names: Cisco
+    orcid: "https://orcid.org/0009-0005-7810-5077"
+repository-code: "https://github.com/RoamingPigs/trcs"
+url: "https://roamingpigs.org/"
+license: Apache-2.0
+version: 2.0.0
+date-released: "2026-10-11"
+abstract: "Code, analysis plan and per-clip results for a small, self-published evaluation of six open speech-recognition models on the synthetic TRCS benchmark. Not peer reviewed."
+keywords:
+  - speech recognition
+  - hallucination
+  - telephone codecs
+  - benchmark
+  - reproducibility

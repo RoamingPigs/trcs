@@ -1,0 +1,89 @@
+name: Reproduction report
+description: Report an attempt to reproduce a result from this repository (success, partial or failure).
+title: "[Reproduction]: "
+labels: ["reproduction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. Failed and partial reports are as welcome as successes and are published the same way.
+        Please attach raw output. A report without raw output cannot be counted.
+  - type: input
+    id: commit
+    attributes:
+      label: Repository commit or release tag you ran
+      description: Full 40-character commit hash if you can.
+    validations:
+      required: true
+  - type: dropdown
+    id: independence
+    attributes:
+      label: Your relationship to the project
+      options:
+        - Not involved with the project (outside party)
+        - Contributor or collaborator
+        - Author
+    validations:
+      required: true
+  - type: dropdown
+    id: method
+    attributes:
+      label: What did you run
+      options:
+        - The author's code and data, unchanged
+        - The author's code with changes (describe below)
+        - My own implementation of the described method
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Outcome against the stated tolerances
+      options:
+        - Reproduced (within tolerance)
+        - Partly reproduced
+        - Not reproduced
+        - Could not run
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Hardware (CPU/GPU model), OS, Python version, library versions, model revision hashes, container if any.
+    validations:
+      required: true
+  - type: textarea
+    id: commands
+    attributes:
+      label: Exact commands run
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Numbers you obtained next to the published numbers
+      description: Paste raw output or attach files below.
+    validations:
+      required: true
+  - type: textarea
+    id: deviations
+    attributes:
+      label: Deviations, errors, and anything you changed
+  - type: upload
+    id: logs
+    attributes:
+      label: Logs or result files
+  - type: input
+    id: credit
+    attributes:
+      label: How to credit you
+      description: Name or handle, and optional ORCID or link. Leave blank to be listed as anonymous.
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Publication
+      options:
+        - label: I agree this report and its attachments may be published in the repository.
+          required: true

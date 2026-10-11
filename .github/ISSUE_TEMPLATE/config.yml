@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Corrections to published figures
+    url: https://roamingpigs.org/corrections/
+    about: See how corrections are logged, then open an issue if you found an error.

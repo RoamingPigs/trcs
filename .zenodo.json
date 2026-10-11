@@ -1,0 +1,13 @@
+{
+  "title": "TRCS evaluation suite and results: speech-model hallucination and codec-grid error rates on synthetic radio audio",
+  "upload_type": "software",
+  "description": "Code, analysis plan and per-clip results for a small, self-published evaluation of six open speech-recognition models on the synthetic TRCS benchmark. Not peer reviewed. Results files are CC BY 4.0; code is Apache-2.0.",
+  "creators": [{"name": "Caceres, Cisco", "orcid": "0009-0005-7810-5077"}],
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "keywords": ["speech recognition", "hallucination", "telephone codecs", "benchmark", "reproducibility"],
+  "related_identifiers": [
+    {"identifier": "https://huggingface.co/datasets/RoamingPigs/trcs-tactical-audio", "relation": "isSupplementedBy", "scheme": "url"},
+    {"identifier": "https://roamingpigs.org/", "relation": "isDocumentedBy", "scheme": "url"}
+  ]
+}

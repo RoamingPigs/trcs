@@ -1,0 +1,16 @@
+# Versions used for the published run (Python 3.14.4, CPU). Install the CPU wheel of torch with:
+#   pip install torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
+torch==2.14.0
+torchaudio==2.11.0
+transformers==5.16.1
+tokenizers==0.23.2
+safetensors==0.8.0
+accelerate==1.14.0
+huggingface_hub==1.33.0
+numpy==2.5.1
+scipy==1.18.1
+soundfile==0.14.0
+onnxruntime==1.28.0
+pytest==9.1.1
+# Silero VAD is vendored without its dependencies:
+#   pip install --no-deps --target .vendor silero-vad==6.2.3

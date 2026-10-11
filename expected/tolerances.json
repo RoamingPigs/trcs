@@ -1,0 +1,14 @@
+{
+  "set_on": "2026-10-11",
+  "changed_only_with_a_dated_note": true,
+  "same_software_and_hardware_class": {
+    "per_clip_transcripts_identical_min_share": 0.95,
+    "headline_rates_inside_published_95pct_interval": true
+  },
+  "different_hardware_or_library_version": {
+    "note": "Report the share of identical transcripts and every headline rate with your own interval. Agreement means each published headline rate falls inside your 95% interval, or the reverse.",
+    "per_clip_transcripts_identical_min_share": 0.85
+  },
+  "bit_stable_artefacts": ["provenance_manifest.json file digests", "results/SHA256SUMS"],
+  "not_bit_stable": ["model transcripts across CPU or GPU, or across torch versions"]
+}
