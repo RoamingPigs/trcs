@@ -54,12 +54,17 @@ def neural_gate(audio: np.ndarray, sample_rate: int = 16000, _cache: dict = {}) 
     Returns (active, masked_audio, speech_ratio).
     """
     import torch
-    from silero_vad import get_speech_timestamps, load_silero_vad
 
-    if "model" not in _cache:
-        _cache["model"] = load_silero_vad(onnx=True)
-    wav = torch.from_numpy(np.asarray(audio, dtype=np.float32))
-    ts = get_speech_timestamps(wav, _cache["model"], sampling_rate=sample_rate)
+    threads = torch.get_num_threads()  # importing the VAD library resets torch to one thread; restore it afterwards
+    try:
+        from silero_vad import get_speech_timestamps, load_silero_vad
+
+        if "model" not in _cache:
+            _cache["model"] = load_silero_vad(onnx=True)
+        wav = torch.from_numpy(np.asarray(audio, dtype=np.float32))
+        ts = get_speech_timestamps(wav, _cache["model"], sampling_rate=sample_rate)
+    finally:
+        torch.set_num_threads(threads)
     if not ts:
         return False, np.zeros_like(audio), 0.0
     masked = np.zeros_like(audio)
