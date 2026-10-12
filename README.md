@@ -23,6 +23,7 @@ Headline numbers are in [results/REPORT.md](results/REPORT.md). Where my written
 | `verify_results.py` | Re-hash and re-derive, or compare your run with mine |
 | `check_matrix.py` | Completeness and consistency of the raw results against the dataset manifest |
 | `make_sums.py` | Writes `results/SHA256SUMS` |
+| `generator/` | The code that made the audio, and a check that regenerating it reproduces every released SHA-256 (added after the run) |
 | `MODELS.md` | The six checkpoints and their revisions |
 | `expected/tolerances.json` | What counts as agreement, set before any outside run |
 | `results/` | Per-clip results, analysis, report, digests |
