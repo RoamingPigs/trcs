@@ -1,0 +1,26 @@
+{
+ "whisper-tiny.en": {
+  "checked": 24,
+  "identical": 24
+ },
+ "whisper-base.en": {
+  "checked": 24,
+  "identical": 24
+ },
+ "distil-small.en": {
+  "checked": 24,
+  "identical": 24
+ },
+ "whisper-small.en": {
+  "checked": 24,
+  "identical": 24
+ },
+ "distil-large-v3": {
+  "checked": 24,
+  "identical": 24
+ },
+ "whisper-large-v3-turbo": {
+  "checked": 24,
+  "identical": 24
+ }
+}

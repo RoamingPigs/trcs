@@ -1,0 +1,12 @@
+{
+ "plan_commit": "7af45c9b3afb15d41fa58d22c1687e6415789f0d",
+ "plan_pushed_at_utc": "2026-10-11T22:51:28Z",
+ "started_utc": "2026-10-11 22:53",
+ "finished_utc": "2026-10-12 02:52",
+ "e2_finished_utc": "2026-10-12 00:48",
+ "deviations_from_plan": [
+  "E1 and the speech-cost run were first started at 00:48 UTC on 2026-10-12. Importing the Silero VAD library reset torch to one thread, which made them far slower than planned. I noticed at about 02:06 UTC, fixed the gate to restore the thread count (commit 9f023c7), discarded all E1 output from that attempt, and re-ran E1 and the speech-cost run from the start at 48 threads, as the plan states. E2 never loads the VAD and was not affected. Nothing from the discarded attempt is used.",
+  "After the run started I read the raw output of the 39M model only to check that it was non-empty and how often it hit the token cap. No error rate or contrast was looked at before analyze.py ran."
+ ],
+ "code_commit_at_final_run": "9f023c7"
+}

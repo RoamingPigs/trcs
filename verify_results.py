@@ -66,8 +66,15 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--published", type=Path, required=True)
     ap.add_argument("--mine", type=Path)
+    ap.add_argument("--data", type=Path, help="also check the result matrix against the dataset manifest (needs the audio manifest)")
     a = ap.parse_args()
     ok = check_hashes(a.published) and rederive(a.published)
+    if a.data:
+        import check_matrix
+
+        bad = check_matrix.check(a.data, a.published)
+        print("matrix check:", "complete and consistent" if not bad else f"{len(set(bad))} problems, e.g. {sorted(set(bad))[:3]}")
+        ok = ok and not bad
     if a.mine:
         ok = compare(a.published, a.mine) and ok
     return 0 if ok else 1
